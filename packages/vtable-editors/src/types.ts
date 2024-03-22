@@ -6,7 +6,7 @@ export interface IEditor<V = any> {
    * Warning will be thrown if you don't provide this function
    * after removal of `beginEditing`.
    */
-  onStart?: (context: EditContext<V>) => void;
+  onStart?: (context: EditContext<V>) => ((e?: Event) => V | void) | void;
   /**
    * called when cell exits edit mode.
    *
